@@ -1,7 +1,144 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CallCenterMotivationCalc.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="EmployeesListSheetName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ИЦ</Value>
+    </Setting>
+    <Setting Name="EmployeesListFirstRow" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="EmployeesListShortnameColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">A</Value>
+    </Setting>
+    <Setting Name="EmployeesListFullnameColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">B</Value>
+    </Setting>
+    <Setting Name="EmployeesListPositionColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C</Value>
+    </Setting>
+    <Setting Name="EmployeesListSalaryColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D</Value>
+    </Setting>
+    <Setting Name="EmployeesListRateColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">G</Value>
+    </Setting>
+    <Setting Name="EmployeesListPfrColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">F</Value>
+    </Setting>
+    <Setting Name="TimetablePlanSheetName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Лист1</Value>
+    </Setting>
+    <Setting Name="TimetablePlanFirstRow" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">16</Value>
+    </Setting>
+    <Setting Name="TimetablePlanShortNameColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">A</Value>
+    </Setting>
+    <Setting Name="TimetablePlanTotalHoursColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">AI</Value>
+    </Setting>
+    <Setting Name="TimetableFactSheetName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">стр1</Value>
+    </Setting>
+    <Setting Name="TimetableFactFirstRow" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">14</Value>
+    </Setting>
+    <Setting Name="TimetableFactShortNameColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">B</Value>
+    </Setting>
+    <Setting Name="TimetableFactTotalHoursColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">U</Value>
+    </Setting>
+    <Setting Name="TimetableFactFirstDayColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D</Value>
+    </Setting>
+    <Setting Name="TimetableFactLastDayColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">S</Value>
+    </Setting>
+    <Setting Name="TimetableFactNightHoursColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">V</Value>
+    </Setting>
+    <Setting Name="OperatorsQualitySheetName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">сотрудники</Value>
+    </Setting>
+    <Setting Name="OperatorsQualityFirstRow" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="OperatorsQualityFullNameColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">A</Value>
+    </Setting>
+    <Setting Name="OperatorsQualityAverageScoreColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">I</Value>
+    </Setting>
+    <Setting Name="OperatorsQualityStandardValue" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">0.8</Value>
+    </Setting>
+    <Setting Name="OperatorsQualityDesiredValue" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">0.9</Value>
+    </Setting>
+    <Setting Name="OperatorsQualityMaxCoefficient" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">0.2</Value>
+    </Setting>
+    <Setting Name="OperatorsWorktimeSheetName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">исходные</Value>
+    </Setting>
+    <Setting Name="OperatorsWorktimeFirstRow" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="OperatorsWorktimeFullNameColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">A</Value>
+    </Setting>
+    <Setting Name="OperatorsWorktimeTotalCallsTimeColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">F</Value>
+    </Setting>
+    <Setting Name="OperatorsWorktimeRemainingTimeColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">S</Value>
+    </Setting>
+    <Setting Name="OperatorsWorktimePauseTimeColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">X</Value>
+    </Setting>
+    <Setting Name="OperatorsWorktimeStandardValue" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">0.35</Value>
+    </Setting>
+    <Setting Name="OperatorsWorktimeDesiredValue" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">0.45</Value>
+    </Setting>
+    <Setting Name="OperatorsWorktimeMaxCoefficient" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">0.2</Value>
+    </Setting>
+    <Setting Name="AcceptedAndMissedCallsSheetName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">statistics</Value>
+    </Setting>
+    <Setting Name="AcceptedAndMissedCallsFirstRow" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">6</Value>
+    </Setting>
+    <Setting Name="AcceptedAndMissedCallsDateTimeColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">A</Value>
+    </Setting>
+    <Setting Name="AcceptedAndMissedCallsTotalCallsColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">B</Value>
+    </Setting>
+    <Setting Name="AcceptedAndMissedCallsMissedCallsColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">X</Value>
+    </Setting>
+    <Setting Name="AcceptedAndMissedCallsWrongCallsColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Z</Value>
+    </Setting>
+    <Setting Name="AcceptedAndMissedCallsStandardValue" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">0.2</Value>
+    </Setting>
+    <Setting Name="AcceptedAndMissedCallsDesiredValue" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">0.1</Value>
+    </Setting>
+    <Setting Name="AcceptedAndMissedCallsMaxCoefficient" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">0.2</Value>
+    </Setting>
+    <Setting Name="AcceptedAndMissedCallsMorningLastHour" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="AcceptedAndMissedCallsNightFirstHour" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">22</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

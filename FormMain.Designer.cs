@@ -23,37 +23,40 @@
 		/// содержимое этого метода с помощью редактора кода.
 		/// </summary>
 		private void InitializeComponent() {
+			System.Windows.Forms.Label label1;
 			this.labelTitle = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.buttonCalc = new System.Windows.Forms.Button();
-			this.textBoxWorkersList = new System.Windows.Forms.TextBox();
-			this.groupBoxWorkersList = new System.Windows.Forms.GroupBox();
-			this.buttonWorkersList = new System.Windows.Forms.Button();
-			this.groupBoxTimesheetPlan = new System.Windows.Forms.GroupBox();
-			this.buttonTimesheetPlan = new System.Windows.Forms.Button();
-			this.textBoxTimesheetPlan = new System.Windows.Forms.TextBox();
-			this.groupBoxTimesheetFact1 = new System.Windows.Forms.GroupBox();
-			this.buttonTimesheetFact1 = new System.Windows.Forms.Button();
-			this.textBoxTimesheetFact1 = new System.Windows.Forms.TextBox();
-			this.groupBoxKok = new System.Windows.Forms.GroupBox();
-			this.buttonKok = new System.Windows.Forms.Button();
-			this.textBoxKok = new System.Windows.Forms.TextBox();
-			this.groupBoxOperatorsWorkTime = new System.Windows.Forms.GroupBox();
-			this.buttonOperatorsWorkTime = new System.Windows.Forms.Button();
-			this.textBoxOperatorsWorkTime = new System.Windows.Forms.TextBox();
+			this.textBoxEmployeesList = new System.Windows.Forms.TextBox();
+			this.groupBoxEmployeesList = new System.Windows.Forms.GroupBox();
+			this.buttonEmployeesList = new System.Windows.Forms.Button();
+			this.groupBoxTimetablePlan = new System.Windows.Forms.GroupBox();
+			this.buttonTimetablePlan = new System.Windows.Forms.Button();
+			this.textBoxTimetablePlan = new System.Windows.Forms.TextBox();
+			this.groupBoxTimetableFactParts = new System.Windows.Forms.GroupBox();
+			this.buttonTimetableFactPartsRemove = new System.Windows.Forms.Button();
+			this.listViewTimetableFactParts = new System.Windows.Forms.ListView();
+			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.buttonTimetableFactPartsAdd = new System.Windows.Forms.Button();
+			this.groupBoxOperatorsQualityParts = new System.Windows.Forms.GroupBox();
+			this.buttonOperatorsQualityPartsRemove = new System.Windows.Forms.Button();
+			this.listViewOperatorsQualityParts = new System.Windows.Forms.ListView();
+			this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.buttonOperatorsQualityPartsAdd = new System.Windows.Forms.Button();
+			this.groupBoxOperatorsWorktime = new System.Windows.Forms.GroupBox();
+			this.buttonOperatorsWorktime = new System.Windows.Forms.Button();
+			this.textBoxOperatorsWorktime = new System.Windows.Forms.TextBox();
 			this.groupBoxAcceptedAndMissedCalls = new System.Windows.Forms.GroupBox();
 			this.buttonAcceptedAndMissedCalls = new System.Windows.Forms.Button();
 			this.textBoxAcceptedAndMissedCalls = new System.Windows.Forms.TextBox();
-			this.groupBoxTimesheetFact2 = new System.Windows.Forms.GroupBox();
-			this.buttonTimesheetFact2 = new System.Windows.Forms.Button();
-			this.textBoxTimesheetFact2 = new System.Windows.Forms.TextBox();
-			this.groupBoxWorkersList.SuspendLayout();
-			this.groupBoxTimesheetPlan.SuspendLayout();
-			this.groupBoxTimesheetFact1.SuspendLayout();
-			this.groupBoxKok.SuspendLayout();
-			this.groupBoxOperatorsWorkTime.SuspendLayout();
+			this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+			label1 = new System.Windows.Forms.Label();
+			this.groupBoxEmployeesList.SuspendLayout();
+			this.groupBoxTimetablePlan.SuspendLayout();
+			this.groupBoxTimetableFactParts.SuspendLayout();
+			this.groupBoxOperatorsQualityParts.SuspendLayout();
+			this.groupBoxOperatorsWorktime.SuspendLayout();
 			this.groupBoxAcceptedAndMissedCalls.SuspendLayout();
-			this.groupBoxTimesheetFact2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// labelTitle
@@ -79,207 +82,253 @@
 			// 
 			this.buttonCalc.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
 			this.buttonCalc.Enabled = false;
-			this.buttonCalc.Location = new System.Drawing.Point(141, 395);
+			this.buttonCalc.Location = new System.Drawing.Point(180, 458);
+			this.buttonCalc.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
 			this.buttonCalc.Name = "buttonCalc";
 			this.buttonCalc.Size = new System.Drawing.Size(125, 23);
 			this.buttonCalc.TabIndex = 8;
 			this.buttonCalc.Text = "Выполнить расчет";
 			this.buttonCalc.UseVisualStyleBackColor = true;
+			this.buttonCalc.Click += new System.EventHandler(this.ButtonCalc_Click);
 			// 
-			// textBoxWorkersList
+			// textBoxEmployeesList
 			// 
-			this.textBoxWorkersList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.textBoxEmployeesList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxWorkersList.Location = new System.Drawing.Point(6, 17);
-			this.textBoxWorkersList.Name = "textBoxWorkersList";
-			this.textBoxWorkersList.ReadOnly = true;
-			this.textBoxWorkersList.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.textBoxWorkersList.Size = new System.Drawing.Size(338, 20);
-			this.textBoxWorkersList.TabIndex = 0;
+			this.textBoxEmployeesList.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.textBoxEmployeesList.Location = new System.Drawing.Point(6, 17);
+			this.textBoxEmployeesList.Name = "textBoxEmployeesList";
+			this.textBoxEmployeesList.ReadOnly = true;
+			this.textBoxEmployeesList.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.textBoxEmployeesList.Size = new System.Drawing.Size(416, 20);
+			this.textBoxEmployeesList.TabIndex = 0;
 			// 
-			// groupBoxWorkersList
+			// groupBoxEmployeesList
 			// 
-			this.groupBoxWorkersList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.groupBoxWorkersList.Controls.Add(this.buttonWorkersList);
-			this.groupBoxWorkersList.Controls.Add(this.textBoxWorkersList);
-			this.groupBoxWorkersList.Location = new System.Drawing.Point(12, 38);
-			this.groupBoxWorkersList.Name = "groupBoxWorkersList";
-			this.groupBoxWorkersList.Size = new System.Drawing.Size(382, 45);
-			this.groupBoxWorkersList.TabIndex = 9;
-			this.groupBoxWorkersList.TabStop = false;
-			this.groupBoxWorkersList.Text = "Список сотрудников";
+			this.groupBoxEmployeesList.Controls.Add(this.buttonEmployeesList);
+			this.groupBoxEmployeesList.Controls.Add(this.textBoxEmployeesList);
+			this.groupBoxEmployeesList.Location = new System.Drawing.Point(12, 32);
+			this.groupBoxEmployeesList.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+			this.groupBoxEmployeesList.Name = "groupBoxEmployeesList";
+			this.groupBoxEmployeesList.Size = new System.Drawing.Size(460, 45);
+			this.groupBoxEmployeesList.TabIndex = 9;
+			this.groupBoxEmployeesList.TabStop = false;
+			this.groupBoxEmployeesList.Text = "Список сотрудников";
 			// 
-			// buttonWorkersList
+			// buttonEmployeesList
 			// 
-			this.buttonWorkersList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.buttonEmployeesList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.buttonWorkersList.AutoSize = true;
-			this.buttonWorkersList.Location = new System.Drawing.Point(350, 15);
-			this.buttonWorkersList.Name = "buttonWorkersList";
-			this.buttonWorkersList.Size = new System.Drawing.Size(26, 23);
-			this.buttonWorkersList.TabIndex = 1;
-			this.buttonWorkersList.Text = "...";
-			this.buttonWorkersList.UseVisualStyleBackColor = true;
+			this.buttonEmployeesList.AutoSize = true;
+			this.buttonEmployeesList.Location = new System.Drawing.Point(428, 15);
+			this.buttonEmployeesList.Name = "buttonEmployeesList";
+			this.buttonEmployeesList.Size = new System.Drawing.Size(26, 23);
+			this.buttonEmployeesList.TabIndex = 1;
+			this.buttonEmployeesList.Text = "...";
+			this.buttonEmployeesList.UseVisualStyleBackColor = true;
 			// 
-			// groupBoxTimesheetPlan
+			// groupBoxTimetablePlan
 			// 
-			this.groupBoxTimesheetPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.groupBoxTimesheetPlan.Controls.Add(this.buttonTimesheetPlan);
-			this.groupBoxTimesheetPlan.Controls.Add(this.textBoxTimesheetPlan);
-			this.groupBoxTimesheetPlan.Location = new System.Drawing.Point(12, 89);
-			this.groupBoxTimesheetPlan.Name = "groupBoxTimesheetPlan";
-			this.groupBoxTimesheetPlan.Size = new System.Drawing.Size(382, 45);
-			this.groupBoxTimesheetPlan.TabIndex = 10;
-			this.groupBoxTimesheetPlan.TabStop = false;
-			this.groupBoxTimesheetPlan.Text = "Табель (план на месяц)";
+			this.groupBoxTimetablePlan.Controls.Add(this.buttonTimetablePlan);
+			this.groupBoxTimetablePlan.Controls.Add(this.textBoxTimetablePlan);
+			this.groupBoxTimetablePlan.Location = new System.Drawing.Point(12, 83);
+			this.groupBoxTimetablePlan.Name = "groupBoxTimetablePlan";
+			this.groupBoxTimetablePlan.Size = new System.Drawing.Size(460, 45);
+			this.groupBoxTimetablePlan.TabIndex = 10;
+			this.groupBoxTimetablePlan.TabStop = false;
+			this.groupBoxTimetablePlan.Text = "Табель (план на месяц)";
 			// 
-			// buttonTimesheetPlan
+			// buttonTimetablePlan
 			// 
-			this.buttonTimesheetPlan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.buttonTimetablePlan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.buttonTimesheetPlan.AutoSize = true;
-			this.buttonTimesheetPlan.Location = new System.Drawing.Point(350, 15);
-			this.buttonTimesheetPlan.Name = "buttonTimesheetPlan";
-			this.buttonTimesheetPlan.Size = new System.Drawing.Size(26, 23);
-			this.buttonTimesheetPlan.TabIndex = 2;
-			this.buttonTimesheetPlan.Text = "...";
-			this.buttonTimesheetPlan.UseVisualStyleBackColor = true;
+			this.buttonTimetablePlan.AutoSize = true;
+			this.buttonTimetablePlan.Location = new System.Drawing.Point(428, 15);
+			this.buttonTimetablePlan.Name = "buttonTimetablePlan";
+			this.buttonTimetablePlan.Size = new System.Drawing.Size(26, 23);
+			this.buttonTimetablePlan.TabIndex = 2;
+			this.buttonTimetablePlan.Text = "...";
+			this.buttonTimetablePlan.UseVisualStyleBackColor = true;
 			// 
-			// textBoxTimesheetPlan
+			// textBoxTimetablePlan
 			// 
-			this.textBoxTimesheetPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.textBoxTimetablePlan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxTimesheetPlan.Location = new System.Drawing.Point(6, 17);
-			this.textBoxTimesheetPlan.Name = "textBoxTimesheetPlan";
-			this.textBoxTimesheetPlan.ReadOnly = true;
-			this.textBoxTimesheetPlan.Size = new System.Drawing.Size(338, 20);
-			this.textBoxTimesheetPlan.TabIndex = 0;
+			this.textBoxTimetablePlan.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.textBoxTimetablePlan.Location = new System.Drawing.Point(6, 17);
+			this.textBoxTimetablePlan.Name = "textBoxTimetablePlan";
+			this.textBoxTimetablePlan.ReadOnly = true;
+			this.textBoxTimetablePlan.Size = new System.Drawing.Size(416, 20);
+			this.textBoxTimetablePlan.TabIndex = 0;
 			// 
-			// groupBoxTimesheetFact1
+			// groupBoxTimetableFactParts
 			// 
-			this.groupBoxTimesheetFact1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.groupBoxTimesheetFact1.Controls.Add(this.buttonTimesheetFact1);
-			this.groupBoxTimesheetFact1.Controls.Add(this.textBoxTimesheetFact1);
-			this.groupBoxTimesheetFact1.Location = new System.Drawing.Point(12, 140);
-			this.groupBoxTimesheetFact1.Name = "groupBoxTimesheetFact1";
-			this.groupBoxTimesheetFact1.Size = new System.Drawing.Size(382, 45);
-			this.groupBoxTimesheetFact1.TabIndex = 11;
-			this.groupBoxTimesheetFact1.TabStop = false;
-			this.groupBoxTimesheetFact1.Text = "Табель (факт за первую половину)";
+			this.groupBoxTimetableFactParts.Controls.Add(this.buttonTimetableFactPartsRemove);
+			this.groupBoxTimetableFactParts.Controls.Add(this.listViewTimetableFactParts);
+			this.groupBoxTimetableFactParts.Controls.Add(this.buttonTimetableFactPartsAdd);
+			this.groupBoxTimetableFactParts.Location = new System.Drawing.Point(12, 134);
+			this.groupBoxTimetableFactParts.Name = "groupBoxTimetableFactParts";
+			this.groupBoxTimetableFactParts.Size = new System.Drawing.Size(460, 85);
+			this.groupBoxTimetableFactParts.TabIndex = 11;
+			this.groupBoxTimetableFactParts.TabStop = false;
+			this.groupBoxTimetableFactParts.Text = "Табель (факт, один или несколько файлов)";
 			// 
-			// buttonTimesheetFact1
+			// buttonTimetableFactPartsRemove
 			// 
-			this.buttonTimesheetFact1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.buttonTimesheetFact1.AutoSize = true;
-			this.buttonTimesheetFact1.Location = new System.Drawing.Point(350, 15);
-			this.buttonTimesheetFact1.Name = "buttonTimesheetFact1";
-			this.buttonTimesheetFact1.Size = new System.Drawing.Size(26, 23);
-			this.buttonTimesheetFact1.TabIndex = 3;
-			this.buttonTimesheetFact1.Text = "...";
-			this.buttonTimesheetFact1.UseVisualStyleBackColor = true;
+			this.buttonTimetableFactPartsRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.buttonTimetableFactPartsRemove.AutoSize = true;
+			this.buttonTimetableFactPartsRemove.Location = new System.Drawing.Point(428, 56);
+			this.buttonTimetableFactPartsRemove.Name = "buttonTimetableFactPartsRemove";
+			this.buttonTimetableFactPartsRemove.Size = new System.Drawing.Size(26, 23);
+			this.buttonTimetableFactPartsRemove.TabIndex = 5;
+			this.buttonTimetableFactPartsRemove.Text = "–";
+			this.buttonTimetableFactPartsRemove.UseVisualStyleBackColor = true;
 			// 
-			// textBoxTimesheetFact1
+			// listViewTimetableFactParts
 			// 
-			this.textBoxTimesheetFact1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.listViewTimetableFactParts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxTimesheetFact1.Location = new System.Drawing.Point(6, 17);
-			this.textBoxTimesheetFact1.Name = "textBoxTimesheetFact1";
-			this.textBoxTimesheetFact1.ReadOnly = true;
-			this.textBoxTimesheetFact1.Size = new System.Drawing.Size(338, 20);
-			this.textBoxTimesheetFact1.TabIndex = 0;
+			this.listViewTimetableFactParts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+			this.listViewTimetableFactParts.FullRowSelect = true;
+			this.listViewTimetableFactParts.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+			this.listViewTimetableFactParts.Location = new System.Drawing.Point(6, 19);
+			this.listViewTimetableFactParts.Name = "listViewTimetableFactParts";
+			this.listViewTimetableFactParts.ShowItemToolTips = true;
+			this.listViewTimetableFactParts.Size = new System.Drawing.Size(416, 60);
+			this.listViewTimetableFactParts.TabIndex = 4;
+			this.listViewTimetableFactParts.UseCompatibleStateImageBehavior = false;
+			this.listViewTimetableFactParts.View = System.Windows.Forms.View.Details;
 			// 
-			// groupBoxKok
+			// columnHeader1
 			// 
-			this.groupBoxKok.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.groupBoxKok.Controls.Add(this.buttonKok);
-			this.groupBoxKok.Controls.Add(this.textBoxKok);
-			this.groupBoxKok.Location = new System.Drawing.Point(12, 242);
-			this.groupBoxKok.Name = "groupBoxKok";
-			this.groupBoxKok.Size = new System.Drawing.Size(382, 45);
-			this.groupBoxKok.TabIndex = 12;
-			this.groupBoxKok.TabStop = false;
-			this.groupBoxKok.Text = "КОК (сводный)";
+			this.columnHeader1.Text = "Имя файла";
+			this.columnHeader1.Width = 365;
 			// 
-			// buttonKok
+			// buttonTimetableFactPartsAdd
 			// 
-			this.buttonKok.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.buttonTimetableFactPartsAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.buttonTimetableFactPartsAdd.AutoSize = true;
+			this.buttonTimetableFactPartsAdd.Location = new System.Drawing.Point(428, 19);
+			this.buttonTimetableFactPartsAdd.Name = "buttonTimetableFactPartsAdd";
+			this.buttonTimetableFactPartsAdd.Size = new System.Drawing.Size(26, 23);
+			this.buttonTimetableFactPartsAdd.TabIndex = 3;
+			this.buttonTimetableFactPartsAdd.Text = "+";
+			this.buttonTimetableFactPartsAdd.UseVisualStyleBackColor = true;
+			// 
+			// groupBoxOperatorsQualityParts
+			// 
+			this.groupBoxOperatorsQualityParts.Controls.Add(this.buttonOperatorsQualityPartsRemove);
+			this.groupBoxOperatorsQualityParts.Controls.Add(this.listViewOperatorsQualityParts);
+			this.groupBoxOperatorsQualityParts.Controls.Add(this.buttonOperatorsQualityPartsAdd);
+			this.groupBoxOperatorsQualityParts.Location = new System.Drawing.Point(12, 225);
+			this.groupBoxOperatorsQualityParts.Name = "groupBoxOperatorsQualityParts";
+			this.groupBoxOperatorsQualityParts.Size = new System.Drawing.Size(460, 85);
+			this.groupBoxOperatorsQualityParts.TabIndex = 12;
+			this.groupBoxOperatorsQualityParts.TabStop = false;
+			this.groupBoxOperatorsQualityParts.Text = "Качество работы операторов (один или несколько файлов)";
+			// 
+			// buttonOperatorsQualityPartsRemove
+			// 
+			this.buttonOperatorsQualityPartsRemove.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.buttonKok.AutoSize = true;
-			this.buttonKok.Location = new System.Drawing.Point(350, 15);
-			this.buttonKok.Name = "buttonKok";
-			this.buttonKok.Size = new System.Drawing.Size(26, 23);
-			this.buttonKok.TabIndex = 5;
-			this.buttonKok.Text = "...";
-			this.buttonKok.UseVisualStyleBackColor = true;
+			this.buttonOperatorsQualityPartsRemove.AutoSize = true;
+			this.buttonOperatorsQualityPartsRemove.Location = new System.Drawing.Point(428, 56);
+			this.buttonOperatorsQualityPartsRemove.Name = "buttonOperatorsQualityPartsRemove";
+			this.buttonOperatorsQualityPartsRemove.Size = new System.Drawing.Size(26, 23);
+			this.buttonOperatorsQualityPartsRemove.TabIndex = 7;
+			this.buttonOperatorsQualityPartsRemove.Text = "–";
+			this.buttonOperatorsQualityPartsRemove.UseVisualStyleBackColor = true;
 			// 
-			// textBoxKok
+			// listViewOperatorsQualityParts
 			// 
-			this.textBoxKok.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.listViewOperatorsQualityParts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxKok.Location = new System.Drawing.Point(6, 17);
-			this.textBoxKok.Name = "textBoxKok";
-			this.textBoxKok.ReadOnly = true;
-			this.textBoxKok.Size = new System.Drawing.Size(338, 20);
-			this.textBoxKok.TabIndex = 0;
+			this.listViewOperatorsQualityParts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader2});
+			this.listViewOperatorsQualityParts.FullRowSelect = true;
+			this.listViewOperatorsQualityParts.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+			this.listViewOperatorsQualityParts.Location = new System.Drawing.Point(6, 19);
+			this.listViewOperatorsQualityParts.Name = "listViewOperatorsQualityParts";
+			this.listViewOperatorsQualityParts.ShowItemToolTips = true;
+			this.listViewOperatorsQualityParts.Size = new System.Drawing.Size(416, 60);
+			this.listViewOperatorsQualityParts.TabIndex = 6;
+			this.listViewOperatorsQualityParts.UseCompatibleStateImageBehavior = false;
+			this.listViewOperatorsQualityParts.View = System.Windows.Forms.View.Details;
 			// 
-			// groupBoxOperatorsWorkTime
+			// columnHeader2
 			// 
-			this.groupBoxOperatorsWorkTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.groupBoxOperatorsWorkTime.Controls.Add(this.buttonOperatorsWorkTime);
-			this.groupBoxOperatorsWorkTime.Controls.Add(this.textBoxOperatorsWorkTime);
-			this.groupBoxOperatorsWorkTime.Location = new System.Drawing.Point(12, 293);
-			this.groupBoxOperatorsWorkTime.Name = "groupBoxOperatorsWorkTime";
-			this.groupBoxOperatorsWorkTime.Size = new System.Drawing.Size(382, 45);
-			this.groupBoxOperatorsWorkTime.TabIndex = 13;
-			this.groupBoxOperatorsWorkTime.TabStop = false;
-			this.groupBoxOperatorsWorkTime.Text = "Время работы операторов";
+			this.columnHeader2.Text = "Имя файла";
+			this.columnHeader2.Width = 365;
 			// 
-			// buttonOperatorsWorkTime
+			// buttonOperatorsQualityPartsAdd
 			// 
-			this.buttonOperatorsWorkTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.buttonOperatorsQualityPartsAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.buttonOperatorsWorkTime.AutoSize = true;
-			this.buttonOperatorsWorkTime.Location = new System.Drawing.Point(350, 15);
-			this.buttonOperatorsWorkTime.Name = "buttonOperatorsWorkTime";
-			this.buttonOperatorsWorkTime.Size = new System.Drawing.Size(26, 23);
-			this.buttonOperatorsWorkTime.TabIndex = 6;
-			this.buttonOperatorsWorkTime.Text = "...";
-			this.buttonOperatorsWorkTime.UseVisualStyleBackColor = true;
+			this.buttonOperatorsQualityPartsAdd.AutoSize = true;
+			this.buttonOperatorsQualityPartsAdd.Location = new System.Drawing.Point(428, 19);
+			this.buttonOperatorsQualityPartsAdd.Name = "buttonOperatorsQualityPartsAdd";
+			this.buttonOperatorsQualityPartsAdd.Size = new System.Drawing.Size(26, 23);
+			this.buttonOperatorsQualityPartsAdd.TabIndex = 5;
+			this.buttonOperatorsQualityPartsAdd.Text = "+";
+			this.buttonOperatorsQualityPartsAdd.UseVisualStyleBackColor = true;
 			// 
-			// textBoxOperatorsWorkTime
+			// groupBoxOperatorsWorktime
 			// 
-			this.textBoxOperatorsWorkTime.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.groupBoxOperatorsWorktime.Controls.Add(this.buttonOperatorsWorktime);
+			this.groupBoxOperatorsWorktime.Controls.Add(this.textBoxOperatorsWorktime);
+			this.groupBoxOperatorsWorktime.Location = new System.Drawing.Point(12, 316);
+			this.groupBoxOperatorsWorktime.Name = "groupBoxOperatorsWorktime";
+			this.groupBoxOperatorsWorktime.Size = new System.Drawing.Size(460, 45);
+			this.groupBoxOperatorsWorktime.TabIndex = 13;
+			this.groupBoxOperatorsWorktime.TabStop = false;
+			this.groupBoxOperatorsWorktime.Text = "Время работы операторов (дневная смена)";
+			// 
+			// buttonOperatorsWorktime
+			// 
+			this.buttonOperatorsWorktime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.buttonOperatorsWorktime.AutoSize = true;
+			this.buttonOperatorsWorktime.Location = new System.Drawing.Point(428, 15);
+			this.buttonOperatorsWorktime.Name = "buttonOperatorsWorktime";
+			this.buttonOperatorsWorktime.Size = new System.Drawing.Size(26, 23);
+			this.buttonOperatorsWorktime.TabIndex = 6;
+			this.buttonOperatorsWorktime.Text = "...";
+			this.buttonOperatorsWorktime.UseVisualStyleBackColor = true;
+			// 
+			// textBoxOperatorsWorktime
+			// 
+			this.textBoxOperatorsWorktime.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxOperatorsWorkTime.Location = new System.Drawing.Point(6, 17);
-			this.textBoxOperatorsWorkTime.Name = "textBoxOperatorsWorkTime";
-			this.textBoxOperatorsWorkTime.ReadOnly = true;
-			this.textBoxOperatorsWorkTime.Size = new System.Drawing.Size(338, 20);
-			this.textBoxOperatorsWorkTime.TabIndex = 0;
+			this.textBoxOperatorsWorktime.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.textBoxOperatorsWorktime.Location = new System.Drawing.Point(6, 17);
+			this.textBoxOperatorsWorktime.Name = "textBoxOperatorsWorktime";
+			this.textBoxOperatorsWorktime.ReadOnly = true;
+			this.textBoxOperatorsWorktime.Size = new System.Drawing.Size(416, 20);
+			this.textBoxOperatorsWorktime.TabIndex = 0;
 			// 
 			// groupBoxAcceptedAndMissedCalls
 			// 
-			this.groupBoxAcceptedAndMissedCalls.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.groupBoxAcceptedAndMissedCalls.Controls.Add(this.buttonAcceptedAndMissedCalls);
 			this.groupBoxAcceptedAndMissedCalls.Controls.Add(this.textBoxAcceptedAndMissedCalls);
-			this.groupBoxAcceptedAndMissedCalls.Location = new System.Drawing.Point(12, 344);
+			this.groupBoxAcceptedAndMissedCalls.Location = new System.Drawing.Point(12, 367);
 			this.groupBoxAcceptedAndMissedCalls.Name = "groupBoxAcceptedAndMissedCalls";
-			this.groupBoxAcceptedAndMissedCalls.Size = new System.Drawing.Size(382, 45);
+			this.groupBoxAcceptedAndMissedCalls.Size = new System.Drawing.Size(460, 45);
 			this.groupBoxAcceptedAndMissedCalls.TabIndex = 14;
 			this.groupBoxAcceptedAndMissedCalls.TabStop = false;
-			this.groupBoxAcceptedAndMissedCalls.Text = "Отвеченные и неотвеченные звонки";
+			this.groupBoxAcceptedAndMissedCalls.Text = "Отвеченные и неотвеченные звонки (ночная смена)";
 			// 
 			// buttonAcceptedAndMissedCalls
 			// 
 			this.buttonAcceptedAndMissedCalls.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.buttonAcceptedAndMissedCalls.AutoSize = true;
-			this.buttonAcceptedAndMissedCalls.Location = new System.Drawing.Point(350, 15);
+			this.buttonAcceptedAndMissedCalls.Location = new System.Drawing.Point(428, 15);
 			this.buttonAcceptedAndMissedCalls.Name = "buttonAcceptedAndMissedCalls";
 			this.buttonAcceptedAndMissedCalls.Size = new System.Drawing.Size(26, 23);
 			this.buttonAcceptedAndMissedCalls.TabIndex = 7;
@@ -291,59 +340,46 @@
 			this.textBoxAcceptedAndMissedCalls.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBoxAcceptedAndMissedCalls.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.textBoxAcceptedAndMissedCalls.Location = new System.Drawing.Point(6, 17);
 			this.textBoxAcceptedAndMissedCalls.Name = "textBoxAcceptedAndMissedCalls";
 			this.textBoxAcceptedAndMissedCalls.ReadOnly = true;
-			this.textBoxAcceptedAndMissedCalls.Size = new System.Drawing.Size(338, 20);
+			this.textBoxAcceptedAndMissedCalls.Size = new System.Drawing.Size(416, 20);
 			this.textBoxAcceptedAndMissedCalls.TabIndex = 0;
 			// 
-			// groupBoxTimesheetFact2
+			// dateTimePicker
 			// 
-			this.groupBoxTimesheetFact2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.groupBoxTimesheetFact2.Controls.Add(this.buttonTimesheetFact2);
-			this.groupBoxTimesheetFact2.Controls.Add(this.textBoxTimesheetFact2);
-			this.groupBoxTimesheetFact2.Location = new System.Drawing.Point(12, 191);
-			this.groupBoxTimesheetFact2.Name = "groupBoxTimesheetFact2";
-			this.groupBoxTimesheetFact2.Size = new System.Drawing.Size(382, 45);
-			this.groupBoxTimesheetFact2.TabIndex = 12;
-			this.groupBoxTimesheetFact2.TabStop = false;
-			this.groupBoxTimesheetFact2.Text = "Табель (факт за вторую половину)";
+			this.dateTimePicker.CustomFormat = "MMMM yyyy";
+			this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.dateTimePicker.Location = new System.Drawing.Point(239, 425);
+			this.dateTimePicker.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+			this.dateTimePicker.Name = "dateTimePicker";
+			this.dateTimePicker.Size = new System.Drawing.Size(116, 20);
+			this.dateTimePicker.TabIndex = 15;
 			// 
-			// buttonTimesheetFact2
+			// label1
 			// 
-			this.buttonTimesheetFact2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.buttonTimesheetFact2.AutoSize = true;
-			this.buttonTimesheetFact2.Location = new System.Drawing.Point(350, 15);
-			this.buttonTimesheetFact2.Name = "buttonTimesheetFact2";
-			this.buttonTimesheetFact2.Size = new System.Drawing.Size(26, 23);
-			this.buttonTimesheetFact2.TabIndex = 4;
-			this.buttonTimesheetFact2.Text = "...";
-			this.buttonTimesheetFact2.UseVisualStyleBackColor = true;
-			// 
-			// textBoxTimesheetFact2
-			// 
-			this.textBoxTimesheetFact2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxTimesheetFact2.Location = new System.Drawing.Point(6, 17);
-			this.textBoxTimesheetFact2.Name = "textBoxTimesheetFact2";
-			this.textBoxTimesheetFact2.ReadOnly = true;
-			this.textBoxTimesheetFact2.Size = new System.Drawing.Size(338, 20);
-			this.textBoxTimesheetFact2.TabIndex = 0;
+			label1.AutoSize = true;
+			label1.Location = new System.Drawing.Point(129, 429);
+			label1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+			label1.Name = "label1";
+			label1.Size = new System.Drawing.Size(104, 13);
+			label1.TabIndex = 16;
+			label1.Text = "Расчетный период:";
 			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(406, 427);
-			this.Controls.Add(this.groupBoxTimesheetFact2);
+			this.ClientSize = new System.Drawing.Size(484, 493);
+			this.Controls.Add(label1);
+			this.Controls.Add(this.dateTimePicker);
 			this.Controls.Add(this.groupBoxAcceptedAndMissedCalls);
-			this.Controls.Add(this.groupBoxOperatorsWorkTime);
-			this.Controls.Add(this.groupBoxKok);
-			this.Controls.Add(this.groupBoxTimesheetFact1);
-			this.Controls.Add(this.groupBoxTimesheetPlan);
-			this.Controls.Add(this.groupBoxWorkersList);
+			this.Controls.Add(this.groupBoxOperatorsWorktime);
+			this.Controls.Add(this.groupBoxOperatorsQualityParts);
+			this.Controls.Add(this.groupBoxTimetableFactParts);
+			this.Controls.Add(this.groupBoxTimetablePlan);
+			this.Controls.Add(this.groupBoxEmployeesList);
 			this.Controls.Add(this.buttonCalc);
 			this.Controls.Add(this.label7);
 			this.Controls.Add(this.labelTitle);
@@ -352,20 +388,18 @@
 			this.Name = "FormMain";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = " Расчет мотивации для сотрудников колл-центра";
-			this.groupBoxWorkersList.ResumeLayout(false);
-			this.groupBoxWorkersList.PerformLayout();
-			this.groupBoxTimesheetPlan.ResumeLayout(false);
-			this.groupBoxTimesheetPlan.PerformLayout();
-			this.groupBoxTimesheetFact1.ResumeLayout(false);
-			this.groupBoxTimesheetFact1.PerformLayout();
-			this.groupBoxKok.ResumeLayout(false);
-			this.groupBoxKok.PerformLayout();
-			this.groupBoxOperatorsWorkTime.ResumeLayout(false);
-			this.groupBoxOperatorsWorkTime.PerformLayout();
+			this.groupBoxEmployeesList.ResumeLayout(false);
+			this.groupBoxEmployeesList.PerformLayout();
+			this.groupBoxTimetablePlan.ResumeLayout(false);
+			this.groupBoxTimetablePlan.PerformLayout();
+			this.groupBoxTimetableFactParts.ResumeLayout(false);
+			this.groupBoxTimetableFactParts.PerformLayout();
+			this.groupBoxOperatorsQualityParts.ResumeLayout(false);
+			this.groupBoxOperatorsQualityParts.PerformLayout();
+			this.groupBoxOperatorsWorktime.ResumeLayout(false);
+			this.groupBoxOperatorsWorktime.PerformLayout();
 			this.groupBoxAcceptedAndMissedCalls.ResumeLayout(false);
 			this.groupBoxAcceptedAndMissedCalls.PerformLayout();
-			this.groupBoxTimesheetFact2.ResumeLayout(false);
-			this.groupBoxTimesheetFact2.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -376,27 +410,29 @@
 		private System.Windows.Forms.Label labelTitle;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Button buttonCalc;
-		private System.Windows.Forms.TextBox textBoxWorkersList;
-		private System.Windows.Forms.GroupBox groupBoxWorkersList;
-		private System.Windows.Forms.Button buttonWorkersList;
-		private System.Windows.Forms.GroupBox groupBoxTimesheetPlan;
-		private System.Windows.Forms.Button buttonTimesheetPlan;
-		private System.Windows.Forms.TextBox textBoxTimesheetPlan;
-		private System.Windows.Forms.GroupBox groupBoxTimesheetFact1;
-		private System.Windows.Forms.Button buttonTimesheetFact1;
-		private System.Windows.Forms.TextBox textBoxTimesheetFact1;
-		private System.Windows.Forms.GroupBox groupBoxKok;
-		private System.Windows.Forms.Button buttonKok;
-		private System.Windows.Forms.TextBox textBoxKok;
-		private System.Windows.Forms.GroupBox groupBoxOperatorsWorkTime;
-		private System.Windows.Forms.Button buttonOperatorsWorkTime;
-		private System.Windows.Forms.TextBox textBoxOperatorsWorkTime;
+		private System.Windows.Forms.TextBox textBoxEmployeesList;
+		private System.Windows.Forms.GroupBox groupBoxEmployeesList;
+		private System.Windows.Forms.Button buttonEmployeesList;
+		private System.Windows.Forms.GroupBox groupBoxTimetablePlan;
+		private System.Windows.Forms.Button buttonTimetablePlan;
+		private System.Windows.Forms.TextBox textBoxTimetablePlan;
+		private System.Windows.Forms.GroupBox groupBoxTimetableFactParts;
+		private System.Windows.Forms.Button buttonTimetableFactPartsAdd;
+		private System.Windows.Forms.GroupBox groupBoxOperatorsQualityParts;
+		private System.Windows.Forms.Button buttonOperatorsQualityPartsAdd;
+		private System.Windows.Forms.GroupBox groupBoxOperatorsWorktime;
+		private System.Windows.Forms.Button buttonOperatorsWorktime;
+		private System.Windows.Forms.TextBox textBoxOperatorsWorktime;
 		private System.Windows.Forms.GroupBox groupBoxAcceptedAndMissedCalls;
 		private System.Windows.Forms.Button buttonAcceptedAndMissedCalls;
 		private System.Windows.Forms.TextBox textBoxAcceptedAndMissedCalls;
-		private System.Windows.Forms.GroupBox groupBoxTimesheetFact2;
-		private System.Windows.Forms.Button buttonTimesheetFact2;
-		private System.Windows.Forms.TextBox textBoxTimesheetFact2;
+		private System.Windows.Forms.Button buttonTimetableFactPartsRemove;
+		private System.Windows.Forms.ListView listViewTimetableFactParts;
+		private System.Windows.Forms.ColumnHeader columnHeader1;
+		private System.Windows.Forms.Button buttonOperatorsQualityPartsRemove;
+		private System.Windows.Forms.ListView listViewOperatorsQualityParts;
+		private System.Windows.Forms.ColumnHeader columnHeader2;
+		private System.Windows.Forms.DateTimePicker dateTimePicker;
 	}
 }
 
