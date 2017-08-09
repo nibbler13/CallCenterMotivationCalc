@@ -517,7 +517,7 @@ namespace CallCenterMotivationCalc.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.2")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.1")]
         public float AcceptedAndMissedCallsStandardValue {
             get {
                 return ((float)(this["AcceptedAndMissedCallsStandardValue"]));
@@ -529,7 +529,7 @@ namespace CallCenterMotivationCalc.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.07")]
         public float AcceptedAndMissedCallsDesiredValue {
             get {
                 return ((float)(this["AcceptedAndMissedCallsDesiredValue"]));

@@ -23,6 +23,7 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDetails));
 			this.textBox = new System.Windows.Forms.TextBox();
 			this.progressBar = new System.Windows.Forms.ProgressBar();
 			this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
@@ -63,6 +64,7 @@
 			this.ClientSize = new System.Drawing.Size(406, 427);
 			this.Controls.Add(this.progressBar);
 			this.Controls.Add(this.textBox);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MinimumSize = new System.Drawing.Size(422, 466);
 			this.Name = "FormDetails";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

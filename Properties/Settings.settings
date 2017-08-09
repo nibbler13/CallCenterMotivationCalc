@@ -126,10 +126,10 @@
       <Value Profile="(Default)">Z</Value>
     </Setting>
     <Setting Name="AcceptedAndMissedCallsStandardValue" Type="System.Single" Scope="User">
-      <Value Profile="(Default)">0.2</Value>
+      <Value Profile="(Default)">0.1</Value>
     </Setting>
     <Setting Name="AcceptedAndMissedCallsDesiredValue" Type="System.Single" Scope="User">
-      <Value Profile="(Default)">0.1</Value>
+      <Value Profile="(Default)">0.07</Value>
     </Setting>
     <Setting Name="AcceptedAndMissedCallsMaxCoefficient" Type="System.Single" Scope="User">
       <Value Profile="(Default)">0.2</Value>

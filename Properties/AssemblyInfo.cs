@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
 [assembly: AssemblyTitle("CallCenterMotivationCalc")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Программа предназначена для расчета мотивации для сотрудников контакт-центра ООО Клиника ЛМС")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("ООО Клиника ЛМС")]
 [assembly: AssemblyProduct("CallCenterMotivationCalc")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyCopyright("nn-admin@bzklinika.ru 39-511 ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

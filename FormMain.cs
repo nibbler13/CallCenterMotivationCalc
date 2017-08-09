@@ -189,5 +189,15 @@ namespace CallCenterMotivationCalc {
 			if (d.IsJITTrackingEnabled) return true;
 			return false;
 		}
+
+		private void buttonSettings_Click(object sender, EventArgs e) {
+			FormSettings formSettings = new FormSettings();
+			formSettings.ShowDialog();
+		}
+
+		private void buttonAbout_Click(object sender, EventArgs e) {
+			AboutBox aboutBox = new AboutBox();
+			aboutBox.ShowDialog();
+		}
 	}
 }

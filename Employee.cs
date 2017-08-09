@@ -181,10 +181,18 @@ namespace CallCenterMotivationCalc {
 
 
 		public float GetAcceptedAndMissedCoefficient() {
-			//////////////////
-			//TODO//////////////////
-			//////////////////
-			return 0;
+			float missedCallsPercent = GetAcceptedAndMissedResult();
+			float standardValue = Properties.Settings.Default.AcceptedAndMissedCallsStandardValue;
+			float desiredValue = Properties.Settings.Default.AcceptedAndMissedCallsDesiredValue;
+			float maxCoefficient = Properties.Settings.Default.AcceptedAndMissedCallsMaxCoefficient;
+
+			if (missedCallsPercent <= desiredValue) {
+				return maxCoefficient;
+			} else if (missedCallsPercent >= standardValue) {
+				return 0;
+			} else {
+				return maxCoefficient * (standardValue - missedCallsPercent) / (standardValue - desiredValue);
+			}
 		}
 
 		public float GetAcceptedAndMissedResult() {
@@ -269,7 +277,7 @@ namespace CallCenterMotivationCalc {
 				"\tshift: \t\t\t" + rate + Environment.NewLine +
 				"\tsalary: \t\t\t" + Salary + Environment.NewLine +
 				"\ttotalHoursPlan: \t\t" + TotalHoursPlan + Environment.NewLine +
-				"\totalHoursFact: \t\t" + TotalHoursFact + Environment.NewLine +
+				"\ttotalHoursFact: \t\t" + TotalHoursFact + Environment.NewLine +
 				"\thasNightHours: \t\t" + HasNightHours + Environment.NewLine +
 				"\tdaysWithMorningHours: \t" + string.Join(", ", daysWithMorningHours) + Environment.NewLine +
 				"\tdaysWithNightHours: \t" + string.Join(", ", daysWithNightHours) + Environment.NewLine +

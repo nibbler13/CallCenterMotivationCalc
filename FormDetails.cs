@@ -30,11 +30,12 @@ namespace CallCenterMotivationCalc {
 		}
 
 		private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e) {
-			MessageBox.Show("Completed");
 			Cursor = Cursors.Default;
 
-			if (e.Error != null) {
-				Console.WriteLine(e.Error.Message + " " + e.Error.StackTrace);
+			if (e.Error == null) {
+				MessageBox.Show(this, "Все операции завершены", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			} else {
+				MessageBox.Show(this, e.Error.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 	}

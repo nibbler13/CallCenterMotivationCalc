@@ -24,6 +24,7 @@
 		/// </summary>
 		private void InitializeComponent() {
 			System.Windows.Forms.Label label1;
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
 			this.labelTitle = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.buttonCalc = new System.Windows.Forms.Button();
@@ -50,6 +51,8 @@
 			this.buttonAcceptedAndMissedCalls = new System.Windows.Forms.Button();
 			this.textBoxAcceptedAndMissedCalls = new System.Windows.Forms.TextBox();
 			this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+			this.buttonSettings = new System.Windows.Forms.Button();
+			this.buttonAbout = new System.Windows.Forms.Button();
 			label1 = new System.Windows.Forms.Label();
 			this.groupBoxEmployeesList.SuspendLayout();
 			this.groupBoxTimetablePlan.SuspendLayout();
@@ -58,6 +61,16 @@
 			this.groupBoxOperatorsWorktime.SuspendLayout();
 			this.groupBoxAcceptedAndMissedCalls.SuspendLayout();
 			this.SuspendLayout();
+			// 
+			// label1
+			// 
+			label1.AutoSize = true;
+			label1.Location = new System.Drawing.Point(129, 429);
+			label1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+			label1.Name = "label1";
+			label1.Size = new System.Drawing.Size(104, 13);
+			label1.TabIndex = 16;
+			label1.Text = "Расчетный период:";
 			// 
 			// labelTitle
 			// 
@@ -80,9 +93,9 @@
 			// 
 			// buttonCalc
 			// 
-			this.buttonCalc.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			this.buttonCalc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.buttonCalc.Enabled = false;
-			this.buttonCalc.Location = new System.Drawing.Point(180, 458);
+			this.buttonCalc.Location = new System.Drawing.Point(347, 458);
 			this.buttonCalc.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
 			this.buttonCalc.Name = "buttonCalc";
 			this.buttonCalc.Size = new System.Drawing.Size(125, 23);
@@ -357,21 +370,35 @@
 			this.dateTimePicker.Size = new System.Drawing.Size(116, 20);
 			this.dateTimePicker.TabIndex = 15;
 			// 
-			// label1
+			// buttonSettings
 			// 
-			label1.AutoSize = true;
-			label1.Location = new System.Drawing.Point(129, 429);
-			label1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-			label1.Name = "label1";
-			label1.Size = new System.Drawing.Size(104, 13);
-			label1.TabIndex = 16;
-			label1.Text = "Расчетный период:";
+			this.buttonSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.buttonSettings.Location = new System.Drawing.Point(12, 458);
+			this.buttonSettings.Name = "buttonSettings";
+			this.buttonSettings.Size = new System.Drawing.Size(125, 23);
+			this.buttonSettings.TabIndex = 17;
+			this.buttonSettings.Text = "Настройки";
+			this.buttonSettings.UseVisualStyleBackColor = true;
+			this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
+			// 
+			// buttonAbout
+			// 
+			this.buttonAbout.Location = new System.Drawing.Point(452, 9);
+			this.buttonAbout.Margin = new System.Windows.Forms.Padding(0);
+			this.buttonAbout.Name = "buttonAbout";
+			this.buttonAbout.Size = new System.Drawing.Size(23, 23);
+			this.buttonAbout.TabIndex = 18;
+			this.buttonAbout.Text = "?";
+			this.buttonAbout.UseVisualStyleBackColor = true;
+			this.buttonAbout.Click += new System.EventHandler(this.buttonAbout_Click);
 			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(484, 493);
+			this.Controls.Add(this.buttonAbout);
+			this.Controls.Add(this.buttonSettings);
 			this.Controls.Add(label1);
 			this.Controls.Add(this.dateTimePicker);
 			this.Controls.Add(this.groupBoxAcceptedAndMissedCalls);
@@ -384,6 +411,7 @@
 			this.Controls.Add(this.label7);
 			this.Controls.Add(this.labelTitle);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.Name = "FormMain";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -433,6 +461,8 @@
 		private System.Windows.Forms.ListView listViewOperatorsQualityParts;
 		private System.Windows.Forms.ColumnHeader columnHeader2;
 		private System.Windows.Forms.DateTimePicker dateTimePicker;
+		private System.Windows.Forms.Button buttonSettings;
+		private System.Windows.Forms.Button buttonAbout;
 	}
 }
 

@@ -70,20 +70,22 @@ namespace CallCenterMotivationCalc {
 			UpdateProgressBar(90);
 
 			UpdateTextBox("Итоговый список:", false, true);
-			foreach (KeyValuePair<string, Employee> employee in employees)
-				UpdateTextBox(employee.Value.ToString());
+			List<string> keys = employees.Keys.ToList();
+			keys.Sort();
+			foreach (string key in keys)
+				UpdateTextBox(employees[key].ToString());
 
 			WriteToExcel();
 			UpdateProgressBar(100);
 		}
 
-		private bool WriteToExcel() {
+		private void WriteToExcel() {
 			UpdateTextBox("Выгрузка данных в Excel", false, true);
 
 			Excel.Application xlApp = new Excel.Application();
 			if (xlApp == null) {
 				UpdateTextBox("Не удалось открыть приложение Excel", true);
-				return false;
+				return;
 			}
 
 			xlApp.Visible = true;
@@ -91,50 +93,63 @@ namespace CallCenterMotivationCalc {
 			Excel.Workbook xlWb = xlApp.Workbooks.Open(Environment.CurrentDirectory + "\\Шаблон итоговой таблицы.xlsx", ReadOnly: true);
 			if (xlWb == null) {
 				UpdateTextBox("Не удалось открыть файл с шаблоном итоговой таблицы", true);
-				return false;
+				return;
 			}
 
 			Excel.Worksheet xlWs = xlWb.Sheets["Лист1"];
 			if (xlWs == null) {
 				UpdateTextBox("Не удалось найти лист1 в шаблоне итоговой таблицы", true);
-				return false;
+				return;
 			}
 
-			List<string> keys = employees.Keys.ToList();
-			keys.Sort();
-			int row = 6;
+			try {
+				List<string> keys = employees.Keys.ToList();
+				keys.Sort();
+				int row = 6;
 
-			string title = xlWs.Range["A1"].Value;
-			title = title.Replace("*month*", dateTimePeriod.ToString("MMMMM")).Replace("*year*", dateTimePeriod.ToString("yyyy"));
-			xlWs.Range["A1"].Value = title;
+				string title = xlWs.Range["A1"].Value;
+				title = title.Replace("*month*", dateTimePeriod.ToString("MMMMM")).Replace("*year*", dateTimePeriod.ToString("yyyy"));
+				xlWs.Range["A1"].Value = title;
 
-			string subtitle = xlWs.Range["A2"].Value;
-			subtitle = subtitle.Replace("*month*", dateTimePeriod.ToString("MMMMM")).Replace("*year*", dateTimePeriod.ToString("yyyy"));
-			xlWs.Range["A2"].Value = subtitle;
+				string subtitle = xlWs.Range["A2"].Value;
+				subtitle = subtitle.Replace("*month*", dateTimePeriod.ToString("MMMMM")).Replace("*year*", dateTimePeriod.ToString("yyyy"));
+				xlWs.Range["A2"].Value = subtitle;
 
-			foreach (string key in keys) {
-				Employee employee = employees[key];
-				xlWs.Range["A" + row].Value = row - 5;
-				xlWs.Range["B" + row].Value = employee.FullName;
-				xlWs.Range["C" + row].Value = employee.Position;
-				xlWs.Range["D" + row].Value = employee.Rate;
-				xlWs.Range["E" + row].Value = employee.Pfr;
-				xlWs.Range["F" + row].Value = employee.Salary;
-				xlWs.Range["G" + row].Value = employee.GetSpentTime();
-				xlWs.Range["H" + row].Value = employee.GetQualityResult();
-				xlWs.Range["I" + row].Value = employee.GetQualityCoefficient();
-				xlWs.Range["J" + row].Value = employee.GetWorktimeCongestion();
-				xlWs.Range["K" + row].Value = employee.GetWorktimeCoefficient();
-				if (employee.HasNightHours) {
-					xlWs.Range["L" + row].Value = employee.GetAcceptedAndMissedResult();
-					xlWs.Range["M" + row].Value = employee.GetAcceptedAndMissedCoefficient();
+				foreach (string key in keys) {
+					Employee employee = employees[key];
+					xlWs.Range["A" + row].Value = row - 5;
+					xlWs.Range["B" + row].Value = employee.FullName;
+					xlWs.Range["C" + row].Value = employee.Position;
+					xlWs.Range["D" + row].Value = employee.Rate;
+					xlWs.Range["E" + row].Value = employee.Pfr;
+					xlWs.Range["F" + row].Value = employee.Salary;
+					xlWs.Range["G" + row].Value = employee.GetSpentTime();
+					xlWs.Range["H" + row].Value = employee.GetQualityResult();
+					xlWs.Range["I" + row].Value = employee.GetQualityCoefficient();
+
+					if (!employee.HasNightHours) {
+						xlWs.Range["J" + row].Value = employee.GetWorktimeCongestion();
+						xlWs.Range["K" + row].Value = employee.GetWorktimeCoefficient();
+					} else {
+						xlWs.Range["L" + row].Value = employee.GetAcceptedAndMissedResult();
+						xlWs.Range["M" + row].Value = employee.GetAcceptedAndMissedCoefficient();
+					}
+
+					xlWs.Range["N" + row].Formula = "=I$+K$+M$".Replace("$", row.ToString());
+					xlWs.Range["O" + row].Formula = "=F$*N$*G$".Replace("$", row.ToString());
+
+					row++;
 				}
-				row++;
+
+				string savePath = Environment.CurrentDirectory + "\\Результаты\\Итоговая таблица " + DateTime.Now.ToString("yyyyMMdd HHmmss") + ".xlsx";
+				xlWb.SaveAs(savePath);
+				UpdateTextBox("Результат сохранен в файл: " + savePath);
+			} catch (Exception e) {
+				UpdateTextBox(e.Message, true);
+				return;
 			}
 
-			xlWb.SaveAs(Environment.CurrentDirectory + "\\Результаты\\Итоговая таблица " + DateTime.Now.ToString("yyyyMMdd HHmmss") + ".xlsx");
-
-			return true;
+			UpdateTextBox("Выгружено успешно");
 		}
 
 		private void ReadAcceptedAndMissedCalls() {
@@ -178,7 +193,7 @@ namespace CallCenterMotivationCalc {
 					}
 
 					if (thisDayHourEmployees.Count == 0) {
-						UpdateTextBox("Не удалось найти сотрудников, работавших в это время: " + dateTimeStr);
+						UpdateTextBox("Не удалось найти сотрудников, работавших в это время: " + dateTimeStr, true);
 						continue;
 					}
 
@@ -277,9 +292,16 @@ namespace CallCenterMotivationCalc {
 						if (i + 1 >= dataTable.Rows.Count)
 							break;
 
-						string shortName = 
-							dataTable.Rows[i]["F" + GetExcelColumnNumber(Properties.Settings.Default.TimetableFactShortNameColumn)].ToString() +
-							dataTable.Rows[i + 1]["F" + GetExcelColumnNumber(Properties.Settings.Default.TimetableFactShortNameColumn)].ToString();
+						string shortName1 = dataTable.Rows[i]["F" + GetExcelColumnNumber(Properties.Settings.Default.TimetableFactShortNameColumn)].ToString();
+						string shortName2 = dataTable.Rows[i + 1]["F" + GetExcelColumnNumber(Properties.Settings.Default.TimetableFactShortNameColumn)].ToString();
+
+						//line with header
+						if (shortName1.Equals("2")) {
+							i--;
+							continue;
+						}
+
+						string shortName = shortName1 + shortName2;
 
 						if (string.IsNullOrEmpty(shortName) ||
 							shortName.ToLower().Equals("2") ||
